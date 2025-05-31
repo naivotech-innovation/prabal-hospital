@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRABAL Psychiatric Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background-color: #ffffff;
+      color: #333;
+    }
+    .nav-wrapper {
+  display: flex;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Left: Logo Section */
+.left-col {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  flex: 0 0 300px;
+}
+
+.left-col img{
+  width: 300px;
+  height: auto;
+  
+}
+/* Right: Two Rows */
+.right-col {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+/* Top Row */
+.top-row {
+  background: linear-gradient(to right, #00a9b4, #62bc47);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 20px;
+  gap: 20px;
+  color: white;
+}
+
+.top-row a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.whatsapp-contact {
+  display: flex;
+  align-items: center; /* This aligns icon and number vertically */
+  gap: 8px; /* Spacing between icon and number */
+}
+
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+}
+
+.phone {
+  font-size: 14px;
+}
+
+/* Bottom Row */
+.bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 20px;
+  background-color: white;
+  justify-content: space-evenly;
+}
+
+.bottom-row a {
+  text-decoration: none;
+  color: #00787e;
+  font-weight: 500;
+  font-size: 14px;
+}
+    .hero {
+  position: relative;
+  padding: 50px 20px;
+  text-align: center;
+  color: #fff; /* Ensures text is readable over background */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('img/person-holding-hand.jpg') no-repeat center/cover;
+  opacity: 0.4; /* Adjust this value for desired transparency */
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: rgb(32, 30, 30);
+}
+
+.search-box {
+  margin: 20px auto;
+  max-width: 500px;
+  border: 1px solid #00bcd4;
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  background: white;
+  color: black;
+}
+
+.search-box input {
+  border: none;
+  flex: 1;
+  outline: none;
+  font-size: 16px;
+}
+
+.search-box::before {
+  content: '\1F50D';
+  margin-right: 10px;
+}
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 10px;
+      background: #eef9ff;
+    }
+    .feature-box {
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 10px;
+      width: 220px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .yellow { border-color: #f4f4c4; }
+    .blue { border-color: #c4e3f4; }
+    .pink { border-color: #ebc4f4; }
+    .peach { border-color: #f4d4c4; }
+    .purple { border-color: #dcc4f4; }
+
+    .feature-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .commit-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: url('img/hospital.webp');
+      background-size: cover;
+      color: rgb(34, 30, 30);
+      padding: 60px;
+    }
+    .commit-section ::before{
+      opacity: 0.4;
+      
+    }
+    .commit-section h1 {
+      font-size: 40px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    .commit-section p {
+      font-size: 18px;
+      font-weight: 200;
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      color: #222222;
+    }
+    .commit-section button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: #009688;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .services-section {
+      background-color: #009688;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .services-section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .services-section p {
+      font-size: 17px;
+      max-width: 900px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+    }
+
+    .services-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service-card {
+      background-color: white;
+      color: #004d40;
+      width: 220px;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card .plus {
+      color: #009688;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+ .slider-wrapper {
+      width: 100%;
+      overflow: hidden;
+      padding: 20px 0;
+      box-sizing: border-box;
+    }
+
+    .slider-container {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .card {
+      flex: 0 0 auto;
+      background: #edf6fc;
+      border-radius: 12px;
+      padding: 20px;
+      padding-top: 40px;
+      width: 250px;
+      height: 200px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      cursor: pointer;
+      
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-weight: 500;
+      margin: 0;
+    }
+     .container2 {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      margin-left: 100px;
+      
+    }
+    .column2 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .grid-row2 {
+      display: flex;
+      gap: 20px;
+      
+    }
+    .card2 {
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid transparent;
+      width: 300px;
+      background-color: #ffffff;
+    }
+    .card3{
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid transparent;
+      width: 220px;
+      background-color: #ffffff;
+    }
+    .card2 h3 {
+      margin: 10px 0 10px;
+      font-size: 16px;
+      text-align: left;
+    }
+    .card2 p {
+      margin: 0;
+      font-size: 14px;
+      text-align: left;
+    }
+    .appointment {
+      background-color: #fcfced;
+      border-color: #e3e3c9;
+    }
+    .ambulance-call {
+      background-color: #f3faff;
+      border-color: #a8d4f9;
+    }
+    .specialities {
+      background-color: #faf2fe;
+      border-color: #e6c8fb;
+    }
+    .doctors {
+      background-color: #fff4f2;
+      border-color: #f8c1b6;
+    }
+    .mind-wellness {
+      background-color: #faf2fe;
+      border-color: #e6c8fb;
+    }
+    .mind-wellness img{
+      width: 67px;
+      height: auto;
+      text-align: center;
+    }
+    .ambulance-icon {
+      background-color: #fff4f2;
+      border-color: #f8c1b6;
+    }
+    .ambulance-icon img{
+       width: 80px;
+      height: auto;
+      text-align: center;
+    }
+    .icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      
+    }
+    .heading {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .container1 {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      color: #0e1f25; /* Ensures text is readable over background */
+      overflow: hidden;
+      padding: 50px 20px;
+      z-index: 1;
+    }
+    .container1::before{
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('img/doctors.jpg') no-repeat center/cover;
+      opacity: 0.4; /* Adjust this value for desired transparency */
+      z-index: -1;
+    }
+    .intro1 {
+      flex: 1 1 300px;
+      max-width: 400px;
+      height: 350px;
+      margin-right: 40px;
+      margin-left: 0px;
+      background-color: #009688;
+      color: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      margin-top: 40px;
+    }
+
+    .intro1 h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .intro1 p {
+      font-size: 16px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .intro1 button {
+      background-color: white;
+      color: #1d1d1d;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-right: 172px;
+    }
+
+    .doctors1 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      flex: 2 1 600px;
+    }
+
+    .card1 {
+      background-color: white;
+      border-radius: 16px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .card1 img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: -40px;
+      border: 4px solid white;
+    }
+
+    .card1 h3 {
+      margin: 10px 0 4px;
+      font-size: 16px;
+    }
+
+    .card1 small {
+      display: block;
+      font-weight: bold;
+      color: #007b8a;
+      margin-bottom: 8px;
+    }
+
+    .card1 p {
+      font-size: 14px;
+      color: #555;
+      margin: 0 0 10px;
+    }
+
+    .card1 .plus {
+      font-size: 24px;
+      color: #007b8a;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1000px) {
+      .container1 {
+        flex-direction: column;
+        align-items: center;
+      }
+      .intro1 {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
+    }
+     .treatment1-section {
+      background-color: #009688;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    
+    }
+
+    .treatment1-section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .treatment1-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .box1 {
+      background-color: white;
+      color: black;
+      border-radius: 16px;
+      width: 220px;
+      padding: 30px 20px;
+      position: relative;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .box1 h3 {
+      margin: 15px 0 8px;
+      font-size: 16px;
+    }
+
+    .box1 p {
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .step-badge {
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      background-color: #22c8c8;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 12px;
+      font-weight: bold;
+    }
+
+    .box1 img {
+      height: 40px;
+      margin-bottom: 10px;
+      width: 70px;
+      height: auto;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #f9f9f9;
+      padding: 50px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer .left {
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+    }
+
+    .footer .left img {
+      width: 350px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+
+    .footer .left button {
+      background-color: #00b2a9;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .footer .right {
+      flex: 1;
+      min-width: 250px;
+      padding: 0 20px;
+    }
+
+    .footer .right h4 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .footer .right p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @media (max-width: 800px) {
+      .treatment1-boxes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer .right {
+        margin-top: 30px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+    <div class="nav-wrapper">
+    <!-- Left Column: Logo -->
+    <div class="left-col">
+      <img src="img/logo prabal (2).png" alt="PRABAL Logo" class="logo" />
+    </div>
+
+    <!-- Right Column: Two Rows -->
+    <div class="right-col">
+      <!-- Row 1 -->
+        <div class="top-row">
+    <a href="#">Blogs</a>
+    <a href="#">My Reports</a>
+    <a href="#">Request a Callback</a>
+
+    <div class="whatsapp-contact">
+      <img src="img/whatsapp-icon-free-png.webp" alt="WhatsApp" class="whatsapp-icon" />
+      <span class="phone">+91-XXXXXXXXXX</span>
+    </div>
+  </div>
+
+      <!-- Row 2 -->
+      <div class="bottom-row">
+        <a href="#">About Us</a>
+        <a href="#">Treatments</a>
+        <a href="#">Our Centres</a>
+        <a href="#">Programs</a>
+        <a href="#">Team</a>
+        <a href="#">Patient Corner</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1>Compassionate Care, Advanced Treatment</h1>
+    <h1>For Mental Health and Wellness</h1>
+    <div class="search-box">
+      <input type="text" placeholder="Search for Doctors, treatments and services ..." />
+    </div>
+  </section>
+  <section>
+     <div class="container2">
+    <!-- First Column -->
+    <div class="column2">
+      <div class="grid-row2">
+      <div class="card2 appointment">
+        <h3>Book an Appointment</h3>
+        <p>With country's leading experts</p>
+      </div>
+      <div class="card2 ambulance-call">
+        <h3>Call Ambulance</h3>
+        <p>Get ambulance in 20 minutes</p>
+      </div>
+      </div>
+      <div class="grid-row2">
+      <div class="card2 specialities">
+        <h3>Specialities</h3>
+        <p>Our expertise in Healthcare</p>
+      </div>
+      <div class="card2 doctors">
+        <h3>Doctors</h3>
+        <p>Top experts for your health</p>
+      </div>
+      </div>
+    </div>
+
+    <!-- Second Column -->
+    <div class="column2">
+      <div class="heading">We can help you book!</div>
+      <div class="grid-row2">
+        <div class="card3 mind-wellness">
+          <div class="icon">
+            <img src="img/mind wellness.png" alt="mind wellness consultation">
+          </div>
+          <h4>Mind Wellness Consultation</h4>
+        </div>
+        <div class="card3 ambulance-icon">
+          <div class="icon">
+            <img src="img/ambulance.png" alt="mind wellness consultation">
+          </div>
+          <h4>Ambulance</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="commit-section">
+    <h1>Committed to You !</h1>
+    <p>
+      Prabal Hospital is a leading psychiatric and de-addiction center in Lucknow, dedicated to providing evidence-based,
+      patient-centric care. With over 30 years of experience, we specialize in treating depression, anxiety,
+       schizophrenia, bipolar disorder, and substance abuse.
+    </p>
+    <button>Learn More</button>
+  </section>
+  <section class="services-section">
+    <h2>Our Services</h2>
+    <p>People suffer from various mental health disorders that differ in severity. At Prabal, we offer the most integrated treatment options to meet everyone’s needs. From outpatient, in-patient, and rehabilitation services, we have something for everyone</p>
+    <div class="services-cards">
+      <div class="service-card">
+        <img src="img/mental-health-treatment.png" alt="Mental Health Treatment" height="auto" width="450px">
+        <h3>Mental Health Treatment</h3>
+        <div class="plus">+</div>
+      </div>
+      <div class="service-card">
+        <img src="img/de-addiction.png" alt="De-Addiction Programs">
+        <h3>De-Addiction Programs</h3>
+        <div class="plus">+</div>
+      </div>
+      <div class="service-card">
+        <img src="img/specialized therapies.png" alt="Specialized Therapies">
+        <h3>Specialized Therapies</h3>
+        <div class="plus">+</div>
+      </div>
+      <div class="service-card">
+        <img src="img/Rehabilitation & Aftercare.png" alt="Rehabilitation & Aftercare">
+        <h3>Rehabilitation & Aftercare</h3>
+        <div class="plus">+</div>
+      </div>
+    </div>
+  </section>
+  <div class="slider-wrapper">
+  <div class="slider-container" id="slider">
+    <div class="card">
+      <img src="img/Schizophrenia.webp" alt="Schizophrenia" />
+      <p>Mood Disorder</p>
+    </div>
+    <div class="card">
+      <img src="img/Child & Adolescent Disorders.webp" alt="Personality Disorder" />
+      <p>Child & Adolescent Disorders</p>
+    </div>
+    <div class="card">
+      <img src="img/Depression.png" alt="Depression & Anxiety" />
+      <p>Anxiety Disorders</p>
+    </div>
+    <div class="card">
+      <img src="img/Personality.png" alt="Drug Dependence" />
+      <p>Personality Disorders</p>
+    </div>
+    <div class="card">
+      <img src="img/alcohol-removebg-preview.png" alt="OCD & PTSD" />
+      <p>Addiction & Substance Use Disorders</p>
+    </div>
+    <div class="card">
+      <img src="img/New-age Psychological Disorders.png" alt="OCD & PTSD" />
+      <p>New-age Psychological Disorders</p>
+    </div>
+    <div class="card">
+      <img src="img/OCD & PTSD.webp" alt="OCD & PTSD" />
+      <p>OCD & PTSD</p>
+    </div>
+  </div>
+</div>
+  <div class="container1">
+    <div class="intro1">
+      <h1>Meet our <br><strong>Doctors !</strong></h1>
+      <p>PRABAL is home to 50+ eminent doctors in the world, most of whom are pioneers in their respective field. Additionally, they are renowned for developing innovative and revolutionary clinical procedures.</p>
+      <button>FIND A DOCTOR</button>
+    </div>
+
+    <div class="doctors1">
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Samira">
+        <h3>Dr. Samira Habib, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>With over a decade of experience, Dr. Habib is the lead expert on general gynecology and women's health.</p>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Aryan">
+        <h3>Dr. Aryan Patel, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>At the senior doctor tier in Cura, Dr. Patel specializes in gynecologic surgery and diabetic care.</p>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Yukta">
+        <h3>Dr. Yukta Rao, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>Dr. Rao has over 15 years of experience in fertility, rapport and obstetrics.</p>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Samira">
+        <h3>Dr. Samira Habib, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>With over a decade of experience, Dr. Habib is the lead expert on general gynecology and women's health.</p>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Aryan">
+        <h3>Dr. Aryan Patel, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>At the senior doctor tier in Cura, Dr. Patel specializes in gynecologic surgery and diabetic care.</p>
+        <div class="plus">+</div>
+      </div>
+
+      <div class="card1">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Yukta">
+        <h3>Dr. Yukta Rao, M.D.</h3>
+        <small>PSYCHIATRIST</small>
+        <p>Dr. Rao has over 15 years of experience in fertility, rapport and obstetrics.</p>
+        <div class="plus">+</div>
+      </div>
+    </div>
+  </div>
+  <section class="treatment1-section">
+    <h2>Treatment Approach</h2>
+    <div class="treatment1-boxes">
+      <div class="box1">
+        <div class="step-badge">1</div>
+        <img src="img/assessment.png" alt="Assessment">
+        <h3>Assessment</h3>
+        <p>Detailed diagnosis by psychiatrists.</p>
+      </div>
+
+      <div class="box1">
+        <div class="step-badge">2</div>
+        <img src="img/personelized plan.png" alt="Plan">
+        <h3>Personalized Plan</h3>
+        <p>Tailored therapy + medication.</p>
+      </div>
+
+      <div class="box1">
+        <div class="step-badge">3</div>
+        <img src="img/Multidisciplinary Care.png" alt="Multidisciplinary">
+        <h3>Multidisciplinary Care</h3>
+        <p>Psychologists, counselors.</p>
+      </div>
+
+      <div class="box1">
+        <div class="step-badge">4</div>
+        <img src="img/aftercare.avif" alt="Aftercare">
+        <h3>Aftercare</h3>
+        <p>Long-term support for sustained recovery.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="left">
+      <img src="img/logo prabal (2).png" alt="Prabal Logo"></br>
+      <button>Book a consultation</button>
+    </div>
+    <div class="right">
+      <h4>GET IN TOUCH</h4>
+      <p>
+        SP-21, Chetan Vihar,<br>
+        Sector-C, Aliganj,<br>
+        Lucknow-20, Uttar Pradesh, India.<br>
+        Ph: 0522-4249345, 4079576,<br>
+        Mobile: 9415102407.<br>
+        Email: prabalhospital@rediffmail.com
+      </p>
+    </div>
+  </footer>
+  <script>
+  const slider = document.getElementById('slider');
+  let scrollDirection = 1; // 1 = right, -1 = left
+  const speed = 1; // pixels per tick
+  let autoScroll;
+
+  function startAutoScroll() {
+    autoScroll = setInterval(() => {
+      slider.scrollLeft += scrollDirection * speed;
+
+      // Reverse at ends
+      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+        scrollDirection = -1;
+      } else if (slider.scrollLeft <= 0) {
+        scrollDirection = 1;
+      }
+    }, 20);
+  }
+
+  function stopAutoScroll() {
+    clearInterval(autoScroll);
+  }
+
+  // Start scrolling
+  startAutoScroll();
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', stopAutoScroll);
+  slider.addEventListener('mouseleave', startAutoScroll);
+</script>
+
+</body>
+</html>
